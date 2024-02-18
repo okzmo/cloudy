@@ -1,6 +1,4 @@
-import { defineConfig, defineGlobalStyles } from "@pandacss/dev";
-import { wrappingInputRule } from "@tiptap/react";
-
+import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({
   // Whether to use css reset
@@ -28,10 +26,10 @@ export default defineConfig({
             600: { value: "#44516e" },
             700: { value: "#313a4f" },
             800: { value: "#1d232f" },
-            900: { value: "#10131A" }
-          }
-        }
-      }
+            900: { value: "#10131A" },
+          },
+        },
+      },
     },
   },
 
@@ -39,22 +37,22 @@ export default defineConfig({
   outdir: "styled-system",
   jsxFramework: "react",
   globalCss: {
-    'html, body': {
-      color: 'white',
-      backgroundColor: 'main.900',
+    "html, body": {
+      color: "white",
+      backgroundColor: "main.900",
       height: "100dvh",
     },
-    '.tiptap': {
-      backgroundColor: 'main.900/90',
+    ".tiptap": {
+      backgroundColor: "main.900/90",
       backdropFilter: "auto",
       backdropBlur: "lg",
-      WebkitBackdropFilter: "auto",
+      WebkitBackdropBlur: "blur(1.6rem)",
       position: "absolute!",
       borderTopWidth: "thin",
       borderColor: "main.700",
       margin: "auto",
       left: "0",
-      bottom: "1px",
+      bottom: "0",
       paddingX: "8",
       maxHeight: "80",
       overflowY: "auto",
@@ -64,20 +62,20 @@ export default defineConfig({
       zIndex: "2",
       scrollPaddingBlockEnd: "6",
       "&:focus": {
-        outline: "none"
-      }
+        outline: "none",
+      },
     },
-    '.tiptap p.is-editor-empty:first-child::before': {
-      content: 'attr(data-placeholder)',
+    ".tiptap p.is-editor-empty:first-child::before": {
+      content: "attr(data-placeholder)",
       color: "main.600",
       float: "left",
       height: "0",
-      pointerEvents: "none"
+      pointerEvents: "none",
     },
-    '*': {
+    "*": {
       scrollbarWidth: "thin",
       scrollbarColor: "#313a4f #1d232f",
-    }
+    },
     // '::-webkit-scrollbar': {
     //   width: "2",
     // },
@@ -91,5 +89,5 @@ export default defineConfig({
     // '::-webkit-scrollbar-thumb:hover': {
     //   backgroundColor: "main.600",
     // }
-  }
+  },
 });
